@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/src/foundation/basic_types.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:json_cache/json_cache.dart';
 
@@ -132,5 +133,35 @@ class FlutterSecureStorageMock implements FlutterSecureStorage {
     if (value != null) {
       await _fakeCache.refresh(key, json.decode(value) as Map<String, dynamic>);
     }
+  }
+
+  @override
+  Future<bool?> isCupertinoProtectedDataAvailable() {
+    // TODO: implement isCupertinoProtectedDataAvailable
+    throw UnimplementedError();
+  }
+
+  @override
+  // TODO: implement onCupertinoProtectedDataAvailabilityChanged
+  Stream<bool>? get onCupertinoProtectedDataAvailabilityChanged => throw UnimplementedError();
+
+  @override
+  void registerListener({required String key, required ValueChanged<String?> listener}) {
+    // TODO: implement registerListener
+  }
+
+  @override
+  void unregisterAllListeners() {
+    // TODO: implement unregisterAllListeners
+  }
+
+  @override
+  void unregisterAllListenersForKey({required String key}) {
+    // TODO: implement unregisterAllListenersForKey
+  }
+
+  @override
+  void unregisterListener({required String key, required ValueChanged<String?> listener}) {
+    // TODO: implement unregisterListener
   }
 }

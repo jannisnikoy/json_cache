@@ -13,13 +13,13 @@ class JsonCacheLocalStorage implements JsonCache {
   @override
   Future<void> clear() async {
     await _getReady;
-    await _storage.clear();
+    _storage.clear();
   }
 
   @override
   Future<void> refresh(String key, Map<String, dynamic> value) async {
     await _getReady;
-    await _storage.setItem(key, value);
+    _storage.setItem(key, value);
   }
 
   @override
